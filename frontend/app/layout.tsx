@@ -1,0 +1,1 @@
+import './globals.css';import './plant-lab.css';export const metadata={title:'Cipher Orchard',description:'A cooperative semantic puzzle garden.'};export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}
