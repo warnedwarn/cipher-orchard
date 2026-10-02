@@ -15,7 +15,7 @@ GenLayer is load-bearing because semantic fit cannot be reduced to a determinist
 
 ## Graft protocol
 
-`plant_specimen` freezes clues and bounds. `propose_graft` rejects duplicate wallets, duplicate accepted grafts, short reasoning, and closed specimens before calling AI. Validators assess the same rule, clues, accepted history, candidate, and reasoning. Code then normalizes contradictory results, mutates only one counter, and derives terminal state.
+`plant_specimen` freezes clues and bounds. `propose_graft` rejects duplicate wallets and any graft text already attempted on that specimen, including rejected attempts, before calling AI. A replay from a fresh wallet therefore cannot spend another blight mark. Validators assess the same rule, clues, accepted history, candidate, and reasoning. Code then normalizes contradictory results, mutates only one counter, and derives terminal state.
 
 Paged reads are `get_specimens_page` and `get_grafts_page`. Focused reads are `get_specimen` and `get_summary`.
 
@@ -35,6 +35,7 @@ npm run build
 ```text
 genvm-lint check contracts/contract.py
 python -m pytest tests/test_surface.py -q
+gltest tests/direct -v
 node scripts/no-emoji.js
 node scripts/no-emdash.js
 ```

@@ -1,3 +1,3 @@
 # Specimen verification leaf
 
-The surface suite verifies the pinned runner, contract ABI, consensus path, forbidden transfer absence, and documentation. Direct runtime tests are omitted because the installed Windows GenLayer loader currently fails before collection with `unexpected end of memory`. StudioNet execution remains the required validator path.
+The surface suite verifies the pinned runner, contract ABI, consensus path, forbidden transfer absence, documentation, and the complete-history duplicate guard. A direct regression submits a rejected graft, replays the same normalized text from a fresh wallet, and asserts unchanged blight, state, and history length. The installed Windows direct runner still fails while loading the SDK with `unexpected end of memory`, before contract collection. `scripts/verify_duplicate_replay.py` therefore repeats the same executable regression on the corrected StudioNet deployment and records finalized transaction evidence.

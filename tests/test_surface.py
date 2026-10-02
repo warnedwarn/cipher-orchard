@@ -6,4 +6,8 @@ def test_contract_surface():
  for name in ('plant_specimen','propose_graft','get_specimen','get_grafts_page','get_specimens_page'):assert f'def {name}' in SOURCE
  assert 'run_nondet_unsafe' in SOURCE and 'emit_transfer' not in SOURCE
 def test_required_documents():
- for name in ('PRODUCT_BOUNDARY.md','frontend-design-contract.md','readme-design-contract.md','README.md','VERIFICATION.md'):assert (ROOT/name).exists()
+ for name in ('PRODUCT_BOUNDARY.md','frontend-design-contract.md','readme-design-contract.md','README.md','VERIFICATION.md','REMEDIATION.md'):assert (ROOT/name).exists()
+def test_duplicate_guard_covers_every_prior_attempt():
+ assert 'attempted_grafts = [clean(x.get("graft"), 180).lower() for x in history]' in SOURCE
+ assert 'graft.lower() in attempted_grafts' in SOURCE
+ assert 'for x in history if x["accepted"]' in SOURCE
