@@ -11,3 +11,7 @@ def test_duplicate_guard_covers_every_prior_attempt():
  assert 'attempted_grafts = [clean(x.get("graft"), 180).lower() for x in history]' in SOURCE
  assert 'graft.lower() in attempted_grafts' in SOURCE
  assert 'for x in history if x["accepted"]' in SOURCE
+def test_frontend_verifies_execution_not_only_finality():
+ source=(ROOT/'frontend'/'lib'/'chain.ts').read_text(encoding='utf-8')
+ assert 'waitForTransactionReceipt' in source and "status: 'FINALIZED'" in source
+ assert 'MAJORITY_AGREE' in source and 'execution_result' in source

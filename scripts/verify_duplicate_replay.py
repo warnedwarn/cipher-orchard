@@ -26,14 +26,17 @@ def account_from_random_key():
 def wait(client, tx_hash):
     receipt = client.wait_for_transaction_receipt(
         transaction_hash=tx_hash,
-        status="FINALIZED",
+        wait_until="finalized",
         retries=180,
         interval=5000,
         full_transaction=True,
     )
+    leaders = receipt.get("consensus_data", {}).get("leader_receipt", [])
+    if isinstance(leaders, dict):
+        leaders = [leaders]
     executions = [
         str(row.get("execution_result", "")).upper()
-        for row in receipt.get("consensus_data", {}).get("leader_receipt", [])
+        for row in leaders
     ]
     return receipt, executions
 
@@ -60,6 +63,7 @@ plant_tx = owner_client.write_contract(
     ],
 )
 _, plant_execution = wait(owner_client, plant_tx)
+print(json.dumps({"plantTx": plant_tx, "plantExecution": plant_execution}), flush=True)
 assert "SUCCESS" in plant_execution
 
 graft = "STEEL WRENCH"
@@ -70,6 +74,7 @@ first_tx = first_client.write_contract(
     args=[specimen_id, graft, reasoning],
 )
 _, first_execution = wait(first_client, first_tx)
+print(json.dumps({"rejectedGraftTx": first_tx, "rejectedGraftExecution": first_execution}), flush=True)
 assert "SUCCESS" in first_execution
 before = owner_client.read_contract(address=address, function_name="get_specimen", args=[specimen_id])
 before_page = owner_client.read_contract(address=address, function_name="get_grafts_page", args=[specimen_id, 0, 20])
