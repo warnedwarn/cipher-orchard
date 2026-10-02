@@ -2,7 +2,7 @@
 
 Specimen entry: a cooperative semantic puzzle that grows only when independent validators agree that a player's graft fits the frozen clues and rule.
 
-StudioNet contract: `0x359959431F3EB99Ee45378Bce2ADf531df4c7251`
+StudioNet contract: `0x06864b30c52Fd1873269E3EE9DF8a62222697555`
 
 Live specimen: `https://cipher-orchard.pages.dev/`  
 Source notebook: `https://github.com/warnedwarn/cipher-orchard`

@@ -1,11 +1,13 @@
 {
   "account": "warnedwarn",
   "network": "StudioNet",
-  "contractAddress": "0x359959431F3EB99Ee45378Bce2ADf531df4c7251",
-  "deploymentTransaction": "0x92f3a86a37cee5dbc753012c27e6d0497c1e77d90ea2d08b0d09305987c339f9",
+  "contractAddress": "0x06864b30c52Fd1873269E3EE9DF8a62222697555",
+  "deploymentTransaction": "0x74b9568041d348313ff000d810afc4a42c023073bb8c2d5cabc344aa08e4243d",
   "deploymentConsensus": "MAJORITY_AGREE",
   "deploymentExecution": "SUCCESS",
-  "sourceSha256": "dc5c7a3a3c298500fb551a98b0465b840a2e3721747bd55f14dd2f90c62cda60",
+  "sourceCommit": "2e3f1684dd6ad2e807c4f9201b80b68bb54c7ddf",
+  "sourceSha256": "f1b0d6766290268fe42d3a335bc9e24c2ba39c887ec8a2554bff3b9bf2b54aad",
   "repository": "https://github.com/warnedwarn/cipher-orchard",
-  "publicSite": "https://cipher-orchard.pages.dev/"
+  "publicSite": "https://cipher-orchard.pages.dev/",
+  "cloudflareDeployment": "https://e414abdc.cipher-orchard.pages.dev/"
 }
