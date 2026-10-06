@@ -1,0 +1,40 @@
+{
+  "network": "StudioNet",
+  "contract": "0x06864b30c52Fd1873269E3EE9DF8a62222697555",
+  "specimenId": "DUPLICATE-REPLAY-1791308080",
+  "wallets": {
+    "curator": "0x013A0745a3b2DbF87f4AB377266fCcb7e6eEC88A",
+    "firstAttempt": "0x66d86AF4062fe75760c26Ef4d9C3d07C6780Cd3f",
+    "replayAttempt": "0xaC1294087CD79b85f04ff32182d3b7b6Cf86c229"
+  },
+  "transactions": {
+    "plant": "0x4ef7c5aef8a3c459cbd51918bd51a0935ea9ed772bbc5d286f13d23e86c13669",
+    "rejectedGraft": "0xa53a5f6ece349f864747e94d63660c2dd91dcc3f69bb4ae4e5ad0f36cca27ec4",
+    "duplicateReplay": "0xdb7f9071e2a1caadcd96d4e61a44a4fdec659cd3bceca9c3007d97d798f4fd3a"
+  },
+  "results": {
+    "plantExecution": [
+      "SUCCESS",
+      "SUCCESS"
+    ],
+    "rejectedGraftExecution": [
+      "SUCCESS",
+      "SUCCESS"
+    ],
+    "duplicateReplayExecution": [
+      "ERROR",
+      "ERROR"
+    ],
+    "duplicateConsensus": "MAJORITY_AGREE",
+    "before": {
+      "blight": 1,
+      "state": "GERMINATING",
+      "history": 1
+    },
+    "after": {
+      "blight": 1,
+      "state": "GERMINATING",
+      "history": 1
+    }
+  }
+}

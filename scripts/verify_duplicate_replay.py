@@ -6,6 +6,21 @@ from pathlib import Path
 
 from genlayer_py import create_account, create_client
 from genlayer_py.chains import studionet
+from genlayer_py.contracts import actions as contract_actions
+
+
+def calldata_compat(method=None, args=None, kwargs=None):
+    payload = {}
+    if method is not None:
+        payload["method"] = method
+    if args:
+        payload["args"] = args
+    if kwargs:
+        payload["kwargs"] = kwargs
+    return payload
+
+
+contract_actions.make_calldata_object = calldata_compat
 
 ROOT = Path(__file__).parents[1]
 ENV = (ROOT.parents[3] / "accounts.env").read_text(encoding="utf-8")

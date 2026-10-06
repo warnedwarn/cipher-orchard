@@ -42,4 +42,6 @@ node scripts/no-emdash.js
 
 ## Field cautions
 
-The hidden-rule rubric is visible in contract state to validators and should be treated as a consensus puzzle rule, not a cryptographic secret. The installed Windows direct runner currently fails during SDK loading, so full validator behavior must be verified on StudioNet. The frontend is a static Next.js puzzle surface with read-only hydration, browser-wallet writes, and no traditional backend.
+The hidden-rule rubric is visible in contract state to validators and should be treated as a consensus puzzle rule, not a cryptographic secret. The installed Windows direct runner currently fails during SDK loading with `unexpected end of memory`; this is recorded as a runner limitation rather than a passing test. The frontend is a static Next.js puzzle surface with read-only hydration, browser-wallet writes, and no traditional backend.
+
+The StudioNet regression record `DUPLICATE-REPLAY-1791308080` uses two different fresh wallets. The first rejected `STEEL WRENCH` graft moves blight to 1. The second wallet's normalized replay finalizes as an execution error, while blight, state, and history remain exactly `1`, `GERMINATING`, and `1`. The transaction hashes, wallet addresses, and before/after readback are preserved in `evidence/duplicate-replay-live.json`.
